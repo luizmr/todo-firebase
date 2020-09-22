@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+/* ############### global ############### */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Nunito", sans-serif;
+	color: rgb(37, 129, 196);
+	background-color: rgb(243, 240, 240);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+	font-size: 3rem;
+	margin-bottom: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ############### Todo Form ############### */
+
+.form {
+	margin-bottom: 2rem;
+}
+.form form {
+	width: 300px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
 }
 
-.App-link {
-  color: #61dafb;
+.form .form__input {
+	height: 120%;
+	background-color: #fff;
+	border-radius: 0.5rem 0 0 0.5rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form input {
+	outline: none;
+	border: none;
+	width: 100%;
+	padding-left: 10px;
+	background-color: white;
+	font-size: 1rem;
+}
+
+.form button {
+	font-size: 1rem;
+	outline: none;
+	border: none;
+	padding: 5px 10px;
+	height: 120%;
+	color: #fff;
+	background-color: rgb(37, 129, 196);
+	border-radius: 0 0.5rem 0.5rem 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.form button:hover {
+	background-color: #2683c590;
+	transform: scale(1.05);
+}
+
+/* ############### Todo List ############### */
+
+.list {
+	width: 300px;
+}
+
+.list__item {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	margin: 1rem auto 2rem auto;
+	justify-content: center;
+	width: 100%;
+}
+
+.list__item .list__text {
+	background-color: #fff;
+	padding: 5px 10px;
+	border-radius: 0.5rem 0 0 0.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.list__item .list__text .list__icon {
+	background-color: #fff;
+	margin-right: 10px;
+}
+
+.list__item .list__text p {
+	background-color: #fff;
+}
+
+.list__buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.list__buttons .trash {
+	border: none;
+	background-color: #e30000;
+	padding: 0.5rem;
+}
+
+.list__buttons .edit {
+	border: none;
+	background-color: #008000;
+	padding: 0.5rem;
+	border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.list__buttonsIconTrash {
+	fill: #fff;
+	background-color: #e30000;
+	transition: all 0.3s ease-in-out;
+}
+
+.list__buttonsIconEdit {
+	fill: #fff;
+	background-color: #008000;
+	transition: all 0.3s ease-in-out;
+}
+
+.list__buttons button:hover .list__buttonsIconTrash,
+.list__buttons button:hover .list__buttonsIconEdit {
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+.list__buttons button:hover {
+	cursor: pointer;
 }
