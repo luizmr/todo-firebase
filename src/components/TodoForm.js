@@ -21,33 +21,21 @@ function TodoForm({ addItem, edit, index, updateItem }) {
 					}
 				}}
 			>
-				{edit.length > 0 ? (
-					<div className="form__input">
-						<input
-							type="text"
-							name="name"
-							placeholder={edit}
-							onChange={(e) => setItem(e.target.value)}
-							value={item}
-						/>
-					</div>
-				) : (
-					<div className="form__input">
-						<input
-							type="text"
-							name="name"
-							placeholder="Adicione um item"
-							onChange={(e) => setItem(e.target.value)}
-							value={item}
-						/>
-					</div>
-				)}
+				<div className="form__input">
+					<input
+						type="text"
+						name="name"
+						placeholder={
+							edit.length > 0 ? edit : "Adicione um item"
+						}
+						onChange={(e) => setItem(e.target.value)}
+						value={item}
+					/>
+				</div>
 
-				{edit.length > 0 ? (
-					<button type="submit">Editar</button>
-				) : (
-					<button type="submit">Adicionar</button>
-				)}
+				<button type="submit">
+					{edit.length > 0 ? "Editar" : "Adicionar"}
+				</button>
 			</form>
 		</div>
 	);
